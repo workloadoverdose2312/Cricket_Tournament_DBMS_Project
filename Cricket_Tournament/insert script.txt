@@ -1,0 +1,890 @@
+﻿INSERT INTO Organizer (Organizer_ID, Organizer_Name)
+    VALUES (1, 'ICC');
+
+
+    INSERT INTO Tournament (Tournament_ID, Tournament_Name, Format, Prize_Money, Host, Organizer_ID)
+    VALUES (1, 't20 world cup 2024', 'T20', 100000000, 'England', 1);
+
+
+    INSERT INTO Team (Team_ID, Team_Name, Homeground, Tournament_ID)
+    VALUES
+    (1, 'India', NULL, 1),
+    (2, 'Australia', NULL, 1),
+    (3, 'New Zealand', NULL, 1),
+    (4, 'Pakistan', NULL, 1),
+    (5, 'South Africa', NULL, 1),
+    (6, 'Bangladesh', NULL, 1),
+    (7, 'England', NULL, 1),
+    (8, 'Afghanistan', NULL, 1);
+
+
+    INSERT INTO Coach (Coach_ID, Coach_Name, Coach_Type, Experience)
+    VALUES
+    (1, 'Rahul Dravid', 'Head Coach', 12),
+    (2, 'Andrew McDonald', 'Head Coach', 10),
+    (3, 'Gary Stead', 'Head Coach', 8),
+    (4, 'Azhar Mahmood', 'Head Coach', 7),
+    (5, 'Rob Walter', 'Head Coach', 8),
+    (6, 'Chandika Hathurusingha', 'Head Coach', 9),
+    (7, 'Matthew Mott', 'Head Coach', 11),
+    (8, 'Jonathan Trott', 'Head Coach', 5);
+    INSERT INTO Coaches_Teams (Coach_ID, Team_ID)
+    VALUES
+    (1, 1),  -- India
+    (2, 2),  -- Australia
+    (3, 3),  -- New Zealand
+    (4, 4),  -- Pakistan
+    (5, 5),  -- South Africa
+    (6, 6),  -- Bangladesh
+    (7, 7),  -- England
+    (8, 8);  -- Afghanistan
+
+
+    INSERT INTO Players (Player_ID, Player_Name, Team_ID, Playing_Role, Date_of_Birth, Batting_Style, Bowling_Style) VALUES
+    (1, 'Rohit Sharma', 1, 'Batsman', '1987-04-30', 'Right-hand bat', 'None'),
+    (2, 'Hardik Pandya', 1, 'All-rounder', '1993-10-11', 'Right-hand bat', 'Right-arm fast-medium'),
+    (3, 'Virat Kohli', 1, 'Batsman', '1988-11-05', 'Right-hand bat', 'None'),
+    (4, 'Suryakumar Yadav', 1, 'Batsman', '1990-09-14', 'Right-hand bat', 'None'),
+    (5, 'Yashasvi Jaiswal', 1, 'Batsman', '2001-12-28', 'Left-hand bat', 'None'),
+    (6, 'Rishabh Pant', 1, 'Wicket-keeper', '1997-10-04', 'Left-hand bat', 'None'),
+    (7, 'Sanju Samson', 1, 'Wicket-keeper', '1994-11-11', 'Right-hand bat', 'None'),
+    (8, 'Shivam Dube', 1, 'All-rounder', '1993-06-26', 'Left-hand bat', 'Right-arm medium'),
+    (9, 'Axar Patel', 1, 'All-rounder', '1994-01-20', 'Left-hand bat', 'Left-arm orthodox'),
+    (10, 'Ravindra Jadeja', 1, 'All-rounder', '1988-12-06', 'Left-hand bat', 'Left-arm orthodox'),
+    (11, 'Kuldeep Yadav', 1, 'Bowler', '1994-12-14', 'Left-hand bat', 'Left-arm wrist spin'),
+    (12, 'Yuzvendra Chahal', 1, 'Bowler', '1990-07-23', 'Right-hand bat', 'Right-arm legbreak'),
+    (13, 'Arshdeep Singh', 1, 'Bowler', '1999-02-05', 'Left-hand bat', 'Left-arm fast-medium'),
+    (14, 'Mohammed Shami', 1, 'Bowler', '1990-09-03', 'Right-hand bat', 'Right-arm fast-medium'),
+    (15, 'Jasprit Bumrah', 1, 'Bowler', '1993-12-06', 'Right-hand bat', 'Right-arm fast');
+
+
+
+
+    -- Team 2: Australia (Player_ID 16 to 30, Team_ID = 2)
+    INSERT INTO Players (Player_ID, Player_Name, Team_ID, Playing_Role, Date_of_Birth, Batting_Style, Bowling_Style) VALUES
+    (16, 'Mitchell Marsh', 2, 'All-rounder', '1991-10-20', 'Right-hand bat', 'Right-arm fast'),
+    (17, 'Ashton Agar', 2, 'Bowler', '1993-10-14', 'Left-hand bat', 'Left-arm orthodox'),
+    (18, 'Pat Cummins', 2, 'Bowler', '1993-05-08', 'Right-hand bat', 'Right-arm fast'),
+    (19, 'Tim David', 2, 'Batsman', '1996-03-16', 'Right-hand bat', 'None'),
+    (20, 'Nathan Ellis', 2, 'Bowler', '1994-09-22', 'Right-hand bat', 'Right-arm fast-medium'),
+    (21, 'Cameron Green', 2, 'All-rounder', '1999-06-03', 'Right-hand bat', 'Right-arm fast'),
+    (22, 'Josh Hazlewood', 2, 'Bowler', '1991-01-08', 'Right-hand bat', 'Right-arm fast'),
+    (23, 'Travis Head', 2, 'Batsman', '1993-12-29', 'Left-hand bat', 'None'),
+    (24, 'Josh Inglis', 2, 'Wicket-keeper', '1995-03-04', 'Right-hand bat', 'None'),
+    (25, 'Glenn Maxwell', 2, 'All-rounder', '1988-10-14', 'Right-hand bat', 'Right-arm offbreak'),
+    (26, 'Mitchell Starc', 2, 'Bowler', '1990-01-30', 'Left-hand bat', 'Left-arm fast'),
+    (27, 'Marcus Stoinis', 2, 'All-rounder', '1989-08-16', 'Right-hand bat', 'Right-arm medium-fast'),
+    (28, 'Matthew Wade', 2, 'Wicket-keeper', '1987-12-26', 'Left-hand bat', 'None'),
+    (29, 'David Warner', 2, 'Batsman', '1986-10-27', 'Left-hand bat', 'None'),
+    (30, 'Adam Zampa', 2, 'Bowler', '1992-03-31', 'Right-hand bat', 'Right-arm legbreak');
+
+
+    -- Team 3: New Zealand (Player_ID 31 to 45, Team_ID = 3)
+    INSERT INTO Players (Player_ID, Player_Name, Team_ID, Playing_Role, Date_of_Birth, Batting_Style, Bowling_Style) VALUES
+    (31, 'Kane Williamson', 3, 'Batsman', '1990-08-08', 'Right-hand bat', 'None'),
+    (32, 'Finn Allen', 3, 'Batsman', '1999-04-22', 'Right-hand bat', 'None'),
+    (33, 'Trent Boult', 3, 'Bowler', '1989-07-22', 'Right-hand bat', 'Left-arm fast'),
+    (34, 'Michael Bracewell', 3, 'All-rounder', '1991-02-14', 'Left-hand bat', 'Right-arm offbreak'),
+    (35, 'Mark Chapman', 3, 'Batsman', '1994-06-27', 'Left-hand bat', 'None'),
+    (36, 'Devon Conway', 3, 'Wicket-keeper', '1991-07-08', 'Left-hand bat', 'None'),
+    (37, 'Lockie Ferguson', 3, 'Bowler', '1991-06-13', 'Right-hand bat', 'Right-arm fast'),
+    (38, 'Matt Henry', 3, 'Bowler', '1991-12-14', 'Right-hand bat', 'Right-arm fast-medium'),
+    (39, 'Daryl Mitchell', 3, 'All-rounder', '1991-05-20', 'Right-hand bat', 'Right-arm medium'),
+    (40, 'Jimmy Neesham', 3, 'All-rounder', '1990-09-17', 'Left-hand bat', 'Right-arm medium-fast'),
+    (41, 'Glenn Phillips', 3, 'Wicket-keeper', '1996-12-06', 'Right-hand bat', 'None'),
+    (42, 'Rachin Ravindra', 3, 'All-rounder', '1999-11-18', 'Left-hand bat', 'Left-arm orthodox'),
+    (43, 'Mitchell Santner', 3, 'All-rounder', '1992-02-05', 'Left-hand bat', 'Left-arm orthodox'),
+    (44, 'Ish Sodhi', 3, 'Bowler', '1992-10-31', 'Right-hand bat', 'Right-arm legbreak'),
+    (45, 'Tim Southee', 3, 'Bowler', '1988-12-11', 'Right-hand bat', 'Right-arm fast');
+
+
+    -- Team 4: Pakistan (Player_ID 46 to 60, Team_ID = 4)
+    INSERT INTO Players (Player_ID, Player_Name, Team_ID, Playing_Role, Date_of_Birth, Batting_Style, Bowling_Style) VALUES
+    (46, 'Babar Azam', 4, 'Batsman', '1994-10-15', 'Right-hand bat', 'None'),
+    (47, 'Saim Ayub', 4, 'Batsman', '2002-05-24', 'Left-hand bat', 'None'),
+    (48, 'Mohammad Rizwan', 4, 'Wicket-keeper', '1992-06-01', 'Right-hand bat', 'None'),
+    (49, 'Fakhar Zaman', 4, 'Batsman', '1990-04-10', 'Left-hand bat', 'None'),
+    (50, 'Azam Khan', 4, 'Wicket-keeper', '1998-08-10', 'Right-hand bat', 'None'),
+    (51, 'Usman Khan', 4, 'Batsman', '1995-05-10', 'Right-hand bat', 'None'),
+    (52, 'Iftikhar Ahmed', 4, 'All-rounder', '1990-09-03', 'Right-hand bat', 'Right-arm medium'),
+    (53, 'Imad Wasim', 4, 'All-rounder', '1988-12-18', 'Left-hand bat', 'Left-arm orthodox'),
+    (54, 'Shaheen Shah Afridi', 4, 'Bowler', '2000-04-06', 'Left-hand bat', 'Left-arm fast'),
+    (55, 'Shadab Khan', 4, 'All-rounder', '1998-10-04', 'Right-hand bat', 'Right-arm legbreak'),
+    (56, 'Mohammad Amir', 4, 'Bowler', '1992-04-13', 'Left-hand bat', 'Left-arm fast'),
+    (57, 'Abbas Afridi', 4, 'Bowler', '2001-04-05', 'Right-hand bat', 'Right-arm fast'),
+    (58, 'Naseem Shah', 4, 'Bowler', '2003-02-15', 'Right-hand bat', 'Right-arm fast'),
+    (59, 'Haris Rauf', 4, 'Bowler', '1993-11-07', 'Right-hand bat', 'Right-arm fast'),
+    (60, 'Abrar Ahmed', 4, 'Bowler', '1998-10-16', 'Right-hand bat', 'Right-arm legbreak');
+
+
+    -- Team 5: South Africa (Player_ID 61 to 75, Team_ID = 5)
+    INSERT INTO Players (Player_ID, Player_Name, Team_ID, Playing_Role, Date_of_Birth, Batting_Style, Bowling_Style) VALUES
+    (61, 'Aiden Markram', 5, 'Batsman', '1994-10-04', 'Right-hand bat', 'None'),
+    (62, 'Ottniel Baartman', 5, 'Bowler', '1993-12-13', 'Right-hand bat', 'Right-arm fast-medium'),
+    (63, 'Gerald Coetzee', 5, 'Bowler', '2000-06-06', 'Right-hand bat', 'Right-arm fast'),
+    (64, 'Quinton de Kock', 5, 'Wicket-keeper', '1992-12-17', 'Left-hand bat', 'None'),
+    (65, 'Bjorn Fortuin', 5, 'Bowler', '1994-02-17', 'Left-hand bat', 'Left-arm orthodox'),
+    (66, 'Reeza Hendricks', 5, 'Batsman', '1989-01-01', 'Right-hand bat', 'None'),
+    (67, 'Marco Jansen', 5, 'All-rounder', '2000-05-01', 'Left-hand bat', 'Right-arm fast'),
+    (68, 'Heinrich Klaasen', 5, 'Wicket-keeper', '1991-10-12', 'Right-hand bat', 'None'),
+    (69, 'Keshav Maharaj', 5, 'Bowler', '1990-02-25', 'Left-hand bat', 'Left-arm orthodox'),
+    (70, 'David Miller', 5, 'Batsman', '1989-06-10', 'Left-hand bat', 'None'),
+    (71, 'Anrich Nortje', 5, 'Bowler', '1993-11-16', 'Right-hand bat', 'Right-arm fast'),
+    (72, 'Kagiso Rabada', 5, 'Bowler', '1995-05-25', 'Right-hand bat', 'Right-arm fast'),
+    (73, 'Ryan Rickelton', 5, 'Batsman', '1995-12-26', 'Left-hand bat', 'None'),
+    (74, 'Sisanda Magala', 5, 'Bowler', '1991-03-07', 'Right-hand bat', 'Right-arm fast-medium'),
+    (75, 'Temba Bavuma', 5, 'Batsman', '1990-05-17', 'Right-hand bat', 'None');
+
+
+
+
+    -- Team 6: Bangladesh (Player_ID 76 to 90, Team_ID = 6)
+    INSERT INTO Players (Player_ID, Player_Name, Team_ID, Playing_Role, Date_of_Birth, Batting_Style, Bowling_Style) VALUES
+    (76, 'Najmul Hossain Shanto', 6, 'Batsman', '1998-08-25', 'Left-hand bat', 'None'),
+    (77, 'Taskin Ahmed', 6, 'Bowler', '1995-04-03', 'Right-hand bat', 'Right-arm fast'),
+    (78, 'Litton Das', 6, 'Wicket-keeper', '1994-10-13', 'Right-hand bat', 'None'),
+    (79, 'Soumya Sarkar', 6, 'All-rounder', '1993-02-25', 'Left-hand bat', 'Right-arm medium'),
+    (80, 'Tanzid Hasan', 6, 'Batsman', '2000-12-01', 'Right-hand bat', 'None'),
+    (81, 'Shakib Al Hasan', 6, 'All-rounder', '1987-03-24', 'Left-hand bat', 'Left-arm orthodox'),
+    (82, 'Towhid Hridoy', 6, 'Batsman', '2000-12-04', 'Right-hand bat', 'None'),
+    (83, 'Mahmudullah', 6, 'All-rounder', '1986-02-04', 'Right-hand bat', 'Right-arm offbreak'),
+    (84, 'Jaker Ali', 6, 'Wicket-keeper', '1998-02-22', 'Right-hand bat', 'None'),
+    (85, 'Tanvir Islam', 6, 'Bowler', '1996-10-25', 'Left-hand bat', 'Left-arm orthodox'),
+    (86, 'Mahedi Hasan', 6, 'All-rounder', '1994-12-12', 'Right-hand bat', 'Right-arm offbreak'),
+    (87, 'Rishad Hossain', 6, 'Bowler', '2002-07-15', 'Right-hand bat', 'Right-arm fast-medium'),
+    (88, 'Mustafizur Rahman', 6, 'Bowler', '1995-09-06', 'Right-hand bat', 'Left-arm fast-medium'),
+    (89, 'Shoriful Islam', 6, 'Bowler', '2001-06-03', 'Left-hand bat', 'Left-arm fast-medium'),
+    (90, 'Tanzim Hasan', 6, 'Bowler', '2002-10-20', 'Right-hand bat', 'Right-arm fast');
+
+
+    -- Team 7: England (Player_ID 91 to 105, Team_ID = 7)
+    INSERT INTO Players (Player_ID, Player_Name, Team_ID, Playing_Role, Date_of_Birth, Batting_Style, Bowling_Style) VALUES
+    (91, 'Harry Brook', 7, 'Batsman', '1998-02-22', 'Right-hand bat', 'None'),
+    (92, 'Liam Livingstone', 7, 'All-rounder', '1993-08-04', 'Right-hand bat', 'Right-arm legbreak'),
+    (93, 'Sam Curran', 7, 'All-rounder', '1998-06-03', 'Left-hand bat', 'Left-arm medium'),
+    (94, 'Jos Buttler', 7, 'Wicket-keeper', '1990-09-08', 'Right-hand bat', 'None'),
+    (95, 'Adil Rashid', 7, 'Bowler', '1988-02-17', 'Right-hand bat', 'Right-arm legbreak'),
+    (96, 'Jofra Archer', 7, 'Bowler', '1995-04-01', 'Right-hand bat', 'Right-arm fast'),
+    (97, 'Reece Topley', 7, 'Bowler', '1994-05-21', 'Left-hand bat', 'Left-arm fast-medium'),
+    (98, 'Ben Duckett', 7, 'Batsman', '1996-06-15', 'Left-hand bat', 'None'),
+    (99, 'Jonny Bairstow', 7, 'Batsman', '1989-09-26', 'Right-hand bat', 'None'),
+    (100, 'Moeen Ali', 7, 'All-rounder', '1987-06-18', 'Left-hand bat', 'Right-arm offbreak'),
+    (101, 'Will Jacks', 7, 'All-rounder', '1998-10-06', 'Right-hand bat', 'Right-arm offbreak'),
+    (102, 'Phil Salt', 7, 'Wicket-keeper', '1996-10-06', 'Right-hand bat', 'None'),
+    (103, 'Chris Jordan', 7, 'Bowler', '1988-12-04', 'Right-hand bat', 'Right-arm fast-medium'),
+    (104, 'Mark Wood', 7, 'Bowler', '1990-01-11', 'Right-hand bat', 'Right-arm fast'),
+    (105, 'Tom Hartley', 7, 'Bowler', '1997-06-15', 'Left-hand bat', 'Left-arm orthodox');
+
+
+    -- Team 8: Afghanistan (Player_ID 106 to 120, Team_ID = 8)
+    INSERT INTO Players (Player_ID, Player_Name, Team_ID, Playing_Role, Date_of_Birth, Batting_Style, Bowling_Style) VALUES
+    (106, 'Rahmanullah Gurbaz', 8, 'Wicket-keeper Batsman', '2001-11-28', 'Right-hand bat', 'None'),
+    (107, 'Ibrahim Zadran', 8, 'Batsman', '2001-12-12', 'Right-hand bat', 'None'),
+    (108, 'Najibullah Zadran', 8, 'Batsman', '1993-02-28', 'Left-hand bat', 'None'),
+    (109, 'Mohammad Ishaq', 8, 'Wicket-keeper Batsman', '2005-12-01', 'Right-hand bat', 'None'),
+    (110, 'Azmatullah Omarzai', 8, 'All-rounder', '2000-03-24', 'Right-hand bat', 'Right-arm fast-medium'),
+    (111, 'Mohammad Nabi', 8, 'All-rounder', '1985-01-01', 'Right-hand bat', 'Right-arm offbreak'),
+    (112, 'Gulbadin Naib', 8, 'All-rounder', '1991-03-16', 'Right-hand bat', 'Right-arm medium'),
+    (113, 'Karim Janat', 8, 'All-rounder', '1998-08-11', 'Right-hand bat', 'Right-arm medium'),
+    (114, 'Rashid Khan', 8, 'Bowler', '1998-09-20', 'Right-hand bat', 'Right-arm legbreak'),
+    (115, 'Nangyal Kharoti', 8, 'Bowler', '2004-06-30', 'Right-hand bat', 'Right-arm fast'),
+    (116, 'Mujeeb Ur Rahman', 8, 'Bowler', '2001-03-28', 'Right-hand bat', 'Right-arm offbreak'),
+    (117, 'Noor Ahmad', 8, 'Bowler', '2005-01-03', 'Left-hand bat', 'Left-arm wrist spin'),
+    (118, 'Naveen ul Haq', 8, 'Bowler', '1999-09-23', 'Right-hand bat', 'Right-arm fast-medium'),
+    (119, 'Fazalhaq Farooqi', 8, 'Bowler', '2000-09-22', 'Left-hand bat', 'Left-arm fast-medium'),
+    (120, 'Fareed Ahmad Malik', 8, 'Bowler', '1994-08-10', 'Left-hand bat', 'Left-arm fast');
+
+
+-- 5. Umpires (4 on-ground and 2 TV umpires)
+INSERT INTO Umpire (Umpire_ID, Umpire_Name, Experience)
+VALUES
+(1, 'Richard Illingworth', 5),
+(2, 'Chris Gaffaney', 4),
+(3, 'Kumar Dharmasena', 15),
+(4, 'Paul Reiffel', 8),
+(5, 'Joel Wilson', 2),
+(6, 'Nitin Menon', 10);
+
+
+
+
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES
+(1, 1, 8, 'India won by 8 wickets', '2024-10-01', 'Virat Kohli', 'Eden Gardens', 'Kolkata', 'Eden Gardens', 1);
+
+
+-- match 1 ind vs afg
+
+
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(1, 1, 8, 13, FALSE, 0, 1, 1),   -- Rohit Sharma
+(1, 2, 24, 24, FALSE, 1, 1, 2),  -- Virat Kohli
+(1, 3, 20, 11, FALSE, 2, 0, 3),  -- Rishabh Pant
+(1, 4, 53, 28, FALSE, 5, 4, 4),  -- Suryakumar Yadav
+(1, 5, 10, 7, FALSE, 1, 1, 5),   -- Shivam Dube
+(1, 6, 32, 24, FALSE, 2, 3, 6),  -- Hardik Pandya
+(1, 7, 7, 5, FALSE, 1, 0, 7),    -- Ravindra Jadeja
+(1, 8, 12, 6, FALSE, 1, 1, 8),   -- Axar Patel
+(1, 9, 2, 2, TRUE, 0, 0, NULL);  -- Arshdeep Singh
+
+
+
+
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(1, 106, 11, 8, FALSE, 1, 1, 9),    -- Rahmanullah Gurbaz
+(1, 107, 4, 8, FALSE, 0, 1, 10),    -- Hazratullah Zazai
+(1, 108, 8, 11, FALSE, 0, 1, 11),   -- Ibrahim Zadran
+(1, 109, 17, 21, FALSE, 1, 1, 12),  -- Gulbadin Naib
+(1, 110, 26, 20, FALSE, 2, 2, 13),  -- Azmatullah Omarzai
+(1, 111, 19, 17, FALSE, 0, 2, 14),  -- Najibullah Zadran
+(1, 112, 14, 14, FALSE, 0, 2, 15),  -- Mohammad Nabi
+(1, 113, 2, 6, FALSE, 0, 0, 16),    -- Rashid Khan
+(1, 114, 12, 18, FALSE, 0, 1, 17),  -- Noor Ahmad
+(1, 115, 0, 1, FALSE, 0, 0, 18),    -- Naveen-ul-Haq
+(1, 116, 4, 1, TRUE, 0, 1, NULL);   -- Fazalhaq Farooqi
+
+
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(1, 116, 24, 33, 3, 0),  -- Fazalhaq Farooqi
+(1, 112, 18, 24, 0, 0),  -- Mohammad Nabi
+(1, 115, 24, 40, 1, 0),  -- Naveen-ul-Haq
+(1, 113, 24, 26, 3, 0),  -- Rashid Khan
+(1, 114, 18, 30, 0, 0),  -- Noor Ahmad
+(1, 110, 18, 33, 1, 0);  -- Azmatullah Omarzai
+
+
+
+
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (2, 1, 2, 'India won by 20 runs', '2024-06-05', 'Rohit Sharma', 'New York', 'New York City', 'Nassau County International Cricket Stadium', 1);
+
+
+
+
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+
+
+VALUES
+(2, 31, 45, 38, FALSE, 3, 4, 4),   -- Mitchell Marsh
+(2, 44, 20, 15, FALSE, 1, 1, 5),   -- Ashton Agar
+(2, 32, 10, 5, FALSE, 0, 1, 6),    -- Pat Cummins
+(2, 45, 5, 6, TRUE, 0, 0, NULL),   -- Tim David
+(2, 1, 12, 10, FALSE, 1, 1, 16),   -- Rohit Sharma
+(2, 2, 30, 25, FALSE, 2, 2, 17),   -- Hardik Pandya
+(2, 3, 25, 18, FALSE, 1, 2, 18),   -- Virat Kohli
+(2, 4, 40, 30, FALSE, 2, 3, 19),   -- Suryakumar Yadav
+(2, 5, 8, 6, TRUE, 0, 0, NULL);    -- Yashasvi Jaiswal
+
+
+
+
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(2, 9, 24, 35, 2, 0),   -- Axar Patel (player_ID 9 from India)
+(2, 10, 24, 25, 3, 0),  -- Ravindra Jadeja
+(2, 11, 18, 20, 1, 0),  -- Kuldeep Yadav
+(2, 22, 24, 30, 2, 0),   -- Josh Hazlewood (player_ID 22)
+(2, 23, 24, 28, 1, 0),   -- Travis Head
+(2, 24, 18, 26, 1, 0);   -- Josh Inglis
+
+
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (3, 1, 6, 'India won by 30 runs', '2024-06-06', 'Rohit Sharma', 'Dhaka', 'Dhaka City', 'Sher-e-Bangla National Cricket Stadium', 1);
+
+
+-- Batting Scoreboard for Bangladesh (Team 6)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(3, 76, 35, 28, FALSE, 2, 3, 1),   -- Najmul Hossain Shanto
+(3, 77, 8, 10, TRUE, 0, 1, NULL),   -- Taskin Ahmed
+(3, 78, 20, 15, FALSE, 1, 1, 2),    -- Litton Das
+(3, 79, 15, 12, FALSE, 0, 1, 3),    -- Soumya Sarkar
+(3, 80, 5, 7, TRUE, 0, 0, NULL);    -- Tanzid Hasan
+
+
+-- Batting Scoreboard for India (Team 1)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(3, 1, 50, 40, FALSE, 4, 5, 76),   -- Rohit Sharma
+(3, 2, 22, 20, FALSE, 1, 2, 77),   -- Hardik Pandya
+(3, 3, 18, 14, FALSE, 0, 2, 78),   -- Virat Kohli
+(3, 4, 10, 8, TRUE, 0, 1, NULL),   -- Suryakumar Yadav
+(3, 5, 5, 4, TRUE, 0, 0, NULL);    -- Yashasvi Jaiswal
+
+
+-- Bowling Scoreboard for India
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(3, 9, 24, 33, 2, 0),   -- Axar Patel
+(3, 10, 24, 28, 1, 0),  -- Ravindra Jadeja
+(3, 11, 18, 22, 1, 0);  -- Kuldeep Yadav
+
+
+-- Bowling Scoreboard for Bangladesh
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(3, 84, 24, 31, 2, 1),   -- Jaker Ali (using player_ID 84 from Bangladesh)
+(3, 85, 18, 26, 1, 0),   -- Tanvir Islam
+(3, 86, 24, 34, 2, 0);   -- Mahedi Hasan
+
+
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (4, 8, 2, 'Australia won by 15 runs', '2024-06-07', 'Mitchell Marsh', 'Abu Dhabi', 'Abu Dhabi City', 'Sheikh Zayed Cricket Stadium', 1);
+
+
+-- Batting Scoreboard for Afghanistan (Team 8)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(4, 106, 30, 25, FALSE, 2, 3, 16),  -- Rahmanullah Gurbaz
+(4, 107, 12, 10, FALSE, 1, 1, 17),  -- Ibrahim Zadran
+(4, 108, 18, 14, FALSE, 1, 2, 18),  -- Najibullah Zadran
+(4, 109, 5, 7, TRUE, 0, 0, NULL);   -- Mohammad Ishaq
+
+
+-- Batting Scoreboard for Australia (Team 2)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(4, 16, 42, 35, FALSE, 3, 3, 106),  -- Mitchell Marsh
+(4, 17, 15, 12, FALSE, 1, 1, 107),  -- Ashton Agar
+(4, 18, 8, 9, TRUE, 0, 1, NULL),     -- Pat Cummins
+(4, 19, 27, 20, FALSE, 2, 2, 108);   -- Tim David
+
+
+-- Bowling Scoreboard for Afghanistan
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(4, 113, 24, 34, 3, 0),   -- Rashid Khan
+(4, 114, 18, 28, 1, 0),   -- Noor Ahmad
+(4, 115, 24, 36, 2, 0);   -- Naveen-ul-Haq
+
+
+-- Bowling Scoreboard for Australia
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(4, 22, 24, 30, 2, 0),   -- Josh Hazlewood
+(4, 23, 24, 32, 1, 0),   -- Travis Head
+(4, 24, 18, 26, 1, 0);   -- Josh Inglis
+
+
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (5, 8, 6, 'Afghanistan won by 15 runs', '2024-06-07', 'Rashid Khan', 'Abu Dhabi', 'Abu Dhabi City', 'Sheikh Zayed Cricket Stadium', 1);
+
+
+-- Batting Scoreboard for Afghanistan
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(5, 106, 22, 18, FALSE, 1, 2, 76),   -- Rahmanullah Gurbaz, Wicket taken by Taskin Ahmed (Player_ID 76)
+(5, 107, 16, 15, FALSE, 1, 1, 77),   -- Ibrahim Zadran, Wicket taken by Litton Das (Player_ID 77)
+(5, 108, 9, 8, FALSE, 0, 1, 78),      -- Najibullah Zadran, Wicket taken by Tanvir Islam (Player_ID 78)
+(5, 109, 34, 29, FALSE, 3, 3, 79),     -- Mohammad Ishaq, Wicket taken by Soumya Sarkar (Player_ID 79)
+(5, 110, 5, 7, TRUE, 0, 0, NULL);      -- Azmatullah Omarzai, no wicket taken against him
+
+
+-- Batting Scoreboard for Bangladesh
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(5, 76, 40, 35, FALSE, 2, 3, 113),   -- Najmul Hossain Shanto, Wicket taken by Rashid Khan (Player_ID 113)
+(5, 77, 10, 9, TRUE, 0, 1, NULL),     -- Taskin Ahmed, no wicket taken against him
+(5, 78, 18, 16, FALSE, 1, 2, 114),    -- Litton Das, Wicket taken by Noor Ahmad (Player_ID 114)
+(5, 79, 12, 10, FALSE, 0, 1, 115),    -- Soumya Sarkar, Wicket taken by Naveen-ul-Haq (Player_ID 115)
+(5, 80, 7, 8, TRUE, 0, 0, NULL);      -- Tanzid Hasan, no wicket taken against him
+
+
+-- Bowling Scoreboard for Afghanistan
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(5, 113, 24, 32, 2, 0),  -- Rashid Khan
+(5, 114, 18, 29, 1, 0),  -- Noor Ahmad
+(5, 115, 24, 35, 2, 0);  -- Naveen-ul-Haq
+
+
+-- Bowling Scoreboard for Afghanistan
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(5, 84, 24, 30, 2, 0),   -- Jaker Ali (player_ID 84)
+(5, 85, 18, 27, 1, 0),   -- Tanvir Islam
+(5, 86, 24, 33, 2, 0);   -- Mahedi Hasan
+
+
+
+
+
+
+-- Match 6: Australia vs Bangladesh
+--------------------------
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (6, 2, 6, 'Australia won by 20 runs', '2024-06-08', 'Mitchell Marsh', 'Abu Dhabi', 'Abu Dhabi City', 'Sheikh Zayed Cricket Stadium', 1);
+
+
+-- Batting Scoreboard for Australia (Team 2)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(6, 16, 50, 40, FALSE, 3, 4, 76),   -- Mitchell Marsh, Wicket taken by Najmul Hossain Shanto (Player_ID 76)
+(6, 17, 15, 12, FALSE, 1, 1, 77),    -- Ashton Agar, Wicket taken by Taskin Ahmed (Player_ID 77)
+(6, 18, 5, 6, TRUE, 0, 0, NULL),     -- Pat Cummins, no wicket taken against him
+(6, 19, 28, 22, FALSE, 2, 2, 78);    -- Tim David, Wicket taken by Litton Das (Player_ID 78)
+
+
+-- Batting Scoreboard for Bangladesh (Team 6)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(6, 76, 32, 28, FALSE, 1, 3, 16),    -- Najmul Hossain Shanto, Wicket taken by Mitchell Marsh (Player_ID 16)
+(6, 77, 12, 10, FALSE, 0, 1, 17),    -- Taskin Ahmed, Wicket taken by Ashton Agar (Player_ID 17)
+(6, 78, 18, 14, FALSE, 1, 2, 18),    -- Litton Das, Wicket taken by Pat Cummins (Player_ID 18)
+(6, 79, 9, 8, TRUE, 0, 1, NULL),     -- Soumya Sarkar, no wicket taken against him
+(6, 80, 7, 6, TRUE, 0, 0, NULL);     -- Tanzid Hasan, no wicket taken against him
+
+
+-- Bowling Scoreboard for Australia
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(6, 22, 24, 33, 2, 0),   -- Josh Hazlewood
+(6, 23, 24, 30, 1, 0),   -- Travis Head
+(6, 24, 18, 28, 1, 0);   -- Josh Inglis
+
+
+-- Bowling Scoreboard for Bangladesh
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(6, 84, 24, 32, 2, 0),   -- Jaker Ali
+(6, 85, 18, 27, 1, 0),   -- Tanvir Islam
+(6, 86, 24, 35, 2, 0);   -- Mahedi Hasan
+
+
+-- Match 7: Pakistan vs South Africa
+--------------------------
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (7, 4, 5, 'Pakistan won by 30 runs', '2024-06-09', 'Imad Wasim', 'Abu Dhabi', 'Abu Dhabi City', 'Sheikh Zayed Cricket Stadium', 1);
+
+
+-- Batting Scoreboard for Pakistan (Team 4)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(7, 46, 55, 42, FALSE, 4, 5, 61),   -- Babar Azam, Wicket taken by Aiden Markram (Player_ID 61)
+(7, 47, 20, 18, FALSE, 1, 1, 62),   -- Saim Ayub, Wicket taken by Ottniel Baartman (Player_ID 62)
+(7, 48, 10, 9, TRUE, 0, 1, NULL),    -- Mohammad Rizwan, no wicket taken against him
+(7, 49, 15, 12, FALSE, 1, 1, 63);   -- Fakhar Zaman, Wicket taken by Gerald Coetzee (Player_ID 63)
+
+
+-- Batting Scoreboard for South Africa (Team 5)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(7, 61, 40, 35, FALSE, 3, 3, 46),   -- Aiden Markram, Wicket taken by Iftikhar Ahmed (Player_ID 46)
+(7, 62, 12, 10, FALSE, 0, 1, 47),   -- Ottniel Baartman, Wicket taken by Imad Wasim (Player_ID 47)
+(7, 63, 5, 6, TRUE, 0, 0, NULL),    -- Gerald Coetzee, no wicket taken against him
+(7, 64, 22, 18, FALSE, 1, 2, 48);   -- Quinton de Kock, Wicket taken by Shaheen Shah Afridi (Player_ID 48)
+
+
+-- Bowling Scoreboard for Pakistan
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(7, 52, 24, 35, 2, 0),   -- Iftikhar Ahmed
+(7, 53, 24, 30, 3, 0),   -- Imad Wasim
+(7, 54, 18, 25, 1, 0);   -- Shaheen Shah Afridi
+
+
+-- Bowling Scoreboard for South Africa
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(7, 69, 24, 32, 2, 0),   -- Keshav Maharaj
+(7, 70, 24, 28, 1, 0),   -- David Miller
+(7, 71, 18, 26, 1, 0);   -- Anrich Nortje
+
+
+-- Match 8: Pakistan vs England
+--------------------------
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (8, 4, 7, 'England won by 12 runs', '2024-06-11', 'Adil Rashid', 'Abu Dhabi', 'Abu Dhabi City', 'Sheikh Zayed Cricket Stadium', 1);
+
+
+-- Batting Scoreboard for Pakistan (Team 4)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(8, 46, 48, 40, FALSE, 3, 4, 91),   -- Babar Azam, Wicket taken by Adil Rashid (Player_ID 91)
+(8, 47, 15, 12, FALSE, 1, 1, 92),   -- Saim Ayub, Wicket taken by Jofra Archer (Player_ID 92)
+(8, 48, 10, 9, TRUE, 0, 1, NULL),    -- Mohammad Rizwan, no wicket taken against him
+(8, 49, 22, 18, FALSE, 1, 2, 93);   -- Fakhar Zaman, Wicket taken by Reece Topley (Player_ID 93)
+
+
+-- Batting Scoreboard for England (Team 7)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(8, 91, 35, 30, FALSE, 2, 3, 46),    -- Harry Brook, Wicket taken by Shadab Khan (Player_ID 55)
+(8, 92, 18, 15, FALSE, 1, 1, 47),    -- Liam Livingstone, Wicket taken by Mohammad Amir (Player_ID 56)
+(8, 93, 9, 8, TRUE, 0, 1, NULL),     -- Sam Curran, no wicket taken against him
+(8, 94, 25, 20, FALSE, 1, 2, 48);    -- Jos Buttler, Wicket taken by Abbas Afridi (Player_ID 57)
+
+
+-- Bowling Scoreboard for Pakistan
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(8, 55, 24, 33, 2, 0),    -- Shadab Khan
+(8, 56, 24, 30, 2, 0),    -- Mohammad Amir
+(8, 57, 18, 28, 1, 0);    -- Abbas Afridi
+
+
+-- Bowling Scoreboard for England
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(8, 95, 24, 34, 2, 0),    -- Adil Rashid
+(8, 96, 24, 32, 1, 0),    -- Jofra Archer
+(8, 97, 18, 28, 1, 0);    -- Reece Topley
+
+
+-- Match 9: Pakistan vs New Zealand
+--------------------------
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (9, 4, 3, 'Pakistan won by 15 runs', '2024-06-12', 'Babar Azam', 'Abu Dhabi', 'Abu Dhabi City', 'Sheikh Zayed Cricket Stadium', 1);
+
+
+-- Batting Scoreboard for Pakistan (Team 4)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(9, 46, 60, 45, FALSE, 4, 6, 31),  -- Babar Azam, Wicket taken by Lockie Ferguson (Player_ID 31)
+(9, 47, 17, 15, FALSE, 1, 1, 32),  -- Saim Ayub, Wicket taken by Matt Henry (Player_ID 32)
+(9, 48, 11, 10, TRUE, 0, 1, NULL),   -- Mohammad Rizwan, no wicket taken against him
+(9, 49, 20, 18, FALSE, 1, 2, 33);    -- Fakhar Zaman, Wicket taken by Daryl Mitchell (Player_ID 33)
+
+
+-- Batting Scoreboard for New Zealand (Team 3)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(9, 31, 40, 35, FALSE, 3, 4, 46),   -- Kane Williamson, Wicket taken by Iftikhar Ahmed (Player_ID 52)
+(9, 32, 15, 12, FALSE, 1, 1, 47),   -- Finn Allen, Wicket taken by Imad Wasim (Player_ID 53)
+(9, 33, 10, 8, TRUE, 0, 1, NULL),     -- Trent Boult, no wicket taken against him
+(9, 34, 22, 18, FALSE, 1, 2, 48);    -- Michael Bracewell, Wicket taken by Shaheen Shah Afridi (Player_ID 54)
+
+
+-- Bowling Scoreboard for Pakistan
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(9, 52, 24, 36, 2, 0),  -- Iftikhar Ahmed
+(9, 53, 24, 32, 2, 0),  -- Imad Wasim
+(9, 54, 18, 27, 1, 0);  -- Shaheen Shah Afridi
+
+
+-- Bowling Scoreboard for New Zealand
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(9, 37, 24, 30, 2, 0),  -- Lockie Ferguson
+(9, 38, 24, 28, 1, 0),  -- Matt Henry
+(9, 39, 18, 26, 1, 0);  -- Daryl Mitchell
+
+
+
+
+--------------------------
+-- Match 10: South Africa vs England
+--------------------------
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (10, 5, 7, 'England won by 9 wickets', '2024-06-13', 'Adil Rashid', 'Cape Town', 'Cape Town City', 'Newlands Cricket Ground', 1);
+
+
+-- Batting Scoreboard for South Africa (Team 5)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(10, 61, 42, 38, FALSE, 3, 3, 91),  -- Aiden Markram, Wicket taken by Adil Rashid (Player_ID 95)
+(10, 62, 15, 12, FALSE, 1, 1, 92),  -- Ottniel Baartman, Wicket taken by Jofra Archer (Player_ID 96)
+(10, 63, 8, 9, TRUE, 0, 0, NULL),    -- Gerald Coetzee, no wicket taken against him
+(10, 64, 25, 20, FALSE, 1, 2, 93);   -- Quinton de Kock, Wicket taken by Reece Topley (Player_ID 97)
+
+
+-- Batting Scoreboard for England (Team 7)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(10, 91, 38, 33, FALSE, 2, 3, 61),   -- Harry Brook, Wicket taken by Keshav Maharaj (Player_ID 69)
+(10, 92, 19, 16, FALSE, 1, 1, 62),   -- Liam Livingstone, Wicket taken by David Miller (Player_ID 70)
+(10, 93, 10, 9, TRUE, 0, 1, NULL),     -- Sam Curran, no wicket taken against him
+(10, 94, 27, 22, FALSE, 1, 2, 63);    -- Jos Buttler, Wicket taken by Anrich Nortje (Player_ID 71)
+
+
+-- Bowling Scoreboard for South Africa
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(10, 69, 24, 34, 2, 0),   -- Keshav Maharaj
+(10, 70, 24, 30, 1, 0),   -- David Miller
+(10, 71, 18, 28, 1, 0);   -- Anrich Nortje
+
+
+-- Bowling Scoreboard for England
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(10, 95, 24, 35, 2, 0),   -- Adil Rashid
+(10, 96, 24, 32, 1, 0),   -- Jofra Archer
+(10, 97, 18, 29, 1, 0);   -- Reece Topley
+
+
+
+
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES (11, 5, 3, 'South Africa won by 20 runs', '2024-06-14', 'Keshav Maharaj', 'Cape Town', 'Cape Town City', 'Newlands Cricket Ground', 1);
+
+
+-- Batting Scoreboard for South Africa (Team 5)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(11, 61, 50, 42, FALSE, 3, 4, 31),  -- Aiden Markram
+(11, 62, 20, 18, FALSE, 1, 1, 32),  -- Ottniel Baartman
+(11, 63, 12, 10, TRUE, 0, 1, NULL),    -- Gerald Coetzee
+(11, 64, 28, 22, FALSE, 1, 2, 33);   -- Quinton de Kock
+
+
+-- Batting Scoreboard for New Zealand (Team 3)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(11, 31, 45, 38, FALSE, 2, 3, 61),   -- Kane Williamson
+(11, 32, 14, 12, FALSE, 1, 1, 62),   -- Finn Allen
+(11, 33, 9, 8, TRUE, 0, 1, NULL),     -- Trent Boult
+(11, 34, 23, 20, FALSE, 1, 2, 63);    -- Michael Bracewell
+
+
+-- Bowling Scoreboard for South Africa
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(11, 69, 24, 33, 2, 0),   -- Keshav Maharaj
+(11, 70, 24, 30, 1, 0),   -- David Miller
+(11, 71, 18, 28, 1, 0);   -- Anrich Nortje
+
+
+-- Bowling Scoreboard for New Zealand
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(11, 37, 24, 31, 2, 0),  -- Lockie Ferguson
+(11, 38, 24, 29, 1, 0),  -- Matt Henry
+(11, 39, 18, 27, 1, 0);  -- Daryl Mitchell
+
+
+--------------------------
+-- Match 12: England vs New Zealand
+--------------------------
+
+
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES
+(12, 7, 3, 'England won by 12 runs', '2024-06-15', 'Adil Rashid', 'London', 'London City', 'Lord Cricket Ground', 1);
+
+
+-- Batting Scoreboard for England (Team 7)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(12, 91, 44, 38, FALSE, 3, 4, 31),  -- Harry Brook, Wicket taken by Lockie Ferguson (Player_ID 37)
+(12, 92, 16, 14, FALSE, 1, 1, 32),  -- Liam Livingstone, Wicket taken by Matt Henry (Player_ID 38)
+(12, 93, 10, 9, TRUE, 0, 1, NULL),    -- Sam Curran, no wicket taken against him
+(12, 94, 28, 22, FALSE, 1, 2, 33);   -- Jos Buttler, Wicket taken by Daryl Mitchell (Player_ID 39)
+
+
+-- Batting Scoreboard for New Zealand (Team 3)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(12, 31, 38, 32, FALSE, 2, 3, 91),   -- Kane Williamson, Wicket taken by Adil Rashid (Player_ID 95)
+(12, 32, 12, 11, FALSE, 1, 1, 92),   -- Finn Allen, Wicket taken by Jofra Archer (Player_ID 96)
+(12, 33, 9, 8, TRUE, 0, 1, NULL),     -- Trent Boult, no wicket taken against him
+(12, 34, 20, 18, FALSE, 1, 2, 93);    -- Michael Bracewell, Wicket taken by Reece Topley (Player_ID 97)
+
+
+-- Bowling Scoreboard for England
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(12, 95, 24, 32, 2, 0),   -- Adil Rashid
+(12, 96, 24, 30, 1, 0),   -- Jofra Archer
+(12, 97, 18, 28, 1, 0);   -- Reece Topley
+
+
+-- Bowling Scoreboard for New Zealand
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(12, 37, 24, 31, 2, 0),   -- Lockie Ferguson
+(12, 38, 24, 29, 1, 0),   -- Matt Henry
+(12, 39, 18, 27, 1, 0);   -- Daryl Mitchell
+
+
+--------------------------
+-- Match 13 (Semi Final): India vs New Zealand
+--------------------------
+
+
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES
+(13, 1, 3, 'India won by 45 runs', '2024-06-18', 'Rohit Sharma', 'Mumbai', 'Mumbai City', 'Wankhede Stadium', 1);
+
+
+-- Batting Scoreboard for India (Team 1)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(13, 1, 65, 50, FALSE, 5, 6, 31),   -- Rohit Sharma, Wicket taken by Lockie Ferguson (Player_ID 37)
+(13, 2, 40, 35, FALSE, 3, 4, 32),   -- Hardik Pandya, Wicket taken by Matt Henry (Player_ID 38)
+(13, 3, 30, 28, FALSE, 2, 3, 33),   -- Virat Kohli, Wicket taken by Daryl Mitchell (Player_ID 39)
+(13, 4, 18, 15, TRUE, 1, 1, NULL);   -- Suryakumar Yadav, no wicket taken against him
+
+
+-- Batting Scoreboard for New Zealand (Team 3)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(13, 31, 55, 45, FALSE, 4, 5, 9),   -- Kane Williamson, Wicket taken by Axar Patel (Player_ID 9)
+(13, 32, 22, 20, FALSE, 1, 2, 10),   -- Finn Allen, Wicket taken by Ravindra Jadeja (Player_ID 10)
+(13, 33, 15, 12, TRUE, 0, 1, NULL),   -- Trent Boult, no wicket taken against him
+(13, 34, 27, 21, FALSE, 1, 2, 11);    -- Michael Bracewell, Wicket taken by Kuldeep Yadav (Player_ID 11)
+
+
+-- Bowling Scoreboard for India
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(13, 9, 24, 36, 2, 0),   -- Axar Patel
+(13, 10, 24, 30, 2, 0),   -- Ravindra Jadeja
+(13, 11, 18, 28, 1, 0);   -- Kuldeep Yadav
+
+
+-- Bowling Scoreboard for New Zealand
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(13, 37, 24, 33, 2, 0),   -- Lockie Ferguson
+(13, 38, 24, 30, 1, 0),   -- Matt Henry
+(13, 39, 18, 27, 1, 0);   -- Daryl Mitchell
+
+
+
+
+--------------------------
+-- Match 14 (Semi Final): Afghanistan vs South Africa
+--------------------------
+
+
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES
+(14, 8, 5, 'South Africa won by 32 runs', '2024-06-19', 'Aiden Markram', 'Cape Town', 'Cape Town City', 'Newlands Cricket Ground', 1);
+
+
+-- Batting Scoreboard for Afghanistan (Team 8)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(14, 106, 35, 30, FALSE, 2, 3, 69),   -- Rahmanullah Gurbaz, Wicket taken by Keshav Maharaj (Player_ID 69)
+(14, 107, 20, 18, FALSE, 1, 2, 70),   -- Ibrahim Zadran, Wicket taken by David Miller (Player_ID 70)
+(14, 108, 14, 12, TRUE, 0, 1, NULL),   -- Najibullah Zadran, no wicket taken against him
+(14, 109, 27, 22, FALSE, 1, 2, 71);    -- Mohammad Ishaq, Wicket taken by Anrich Nortje (Player_ID 71)
+
+
+-- Batting Scoreboard for South Africa (Team 5)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(14, 61, 45, 38, FALSE, 3, 4, 106),   -- Aiden Markram, Wicket taken by Rashid Khan (Player_ID 113)
+(14, 62, 18, 15, FALSE, 1, 1, 107),   -- Ottniel Baartman, Wicket taken by Noor Ahmad (Player_ID 114)
+(14, 63, 12, 10, TRUE, 0, 1, NULL),   -- Gerald Coetzee, no wicket taken against him
+(14, 64, 29, 24, FALSE, 1, 2, 108);   -- Quinton de Kock, Wicket taken by Naveen-ul-Haq (Player_ID 115)
+
+
+-- Bowling Scoreboard for Afghanistan
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(14, 113, 24, 34, 2, 0),   -- Rashid Khan
+(14, 114, 18, 30, 1, 0),   -- Noor Ahmad
+(14, 115, 24, 36, 2, 0);   -- Naveen-ul-Haq
+
+
+-- Bowling Scoreboard for South Africa
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(14, 69, 24, 32, 2, 0),   -- Keshav Maharaj
+(14, 70, 24, 28, 1, 0),   -- David Miller
+(14, 71, 18, 26, 1, 0);   -- Anrich Nortje
+
+
+--------------------------
+-- Match 15 (Final): India vs South Africa
+--------------------------
+
+
+-- Match Result
+INSERT INTO Match (Match_ID, Team1_ID, Team2_ID, Result, Date, Man_of_the_Match, Venue, City, Stadium, Tournament_ID)
+VALUES
+(15, 1, 5, 'India won by 8 wickets', '2024-06-22', 'Rohit Sharma', 'Cape Town', 'Cape Town City', 'Newlands Cricket Ground', 1);
+
+
+-- Batting Scoreboard for India (Team 1)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(15, 1, 75, 55, FALSE, 5, 7, 69),   -- Rohit Sharma, Wicket taken by Keshav Maharaj (Player_ID 69)
+(15, 2, 50, 45, FALSE, 4, 5, 70),   -- Hardik Pandya, Wicket taken by David Miller (Player_ID 70)
+(15, 3, 35, 30, FALSE, 2, 3, 71),   -- Virat Kohli, Wicket taken by Anrich Nortje (Player_ID 71)
+(15, 4, 18, 15, TRUE, 1, 1, NULL);  -- Suryakumar Yadav, no wicket taken against him
+
+
+-- Batting Scoreboard for South Africa (Team 5)
+INSERT INTO Batting_Scoreboard (Match_ID, Player_ID, Runs, Balls_Faced, Not_Out, Sixes, Fours, Wicket_by)
+VALUES
+(15, 61, 68, 50, FALSE, 4, 6, 1),   -- Aiden Markram, Wicket taken by Rohit Sharma (Player_ID 1)
+(15, 62, 30, 25, FALSE, 2, 3, 2),   -- Ottniel Baartman, Wicket taken by Hardik Pandya (Player_ID 2)
+(15, 63, 22, 20, TRUE, 1, 2, NULL),  -- Gerald Coetzee, no wicket taken against him
+(15, 64, 27, 23, FALSE, 1, 2, 3);    -- Quinton de Kock, Wicket taken by Virat Kohli (Player_ID 3)
+
+
+-- Bowling Scoreboard for India
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(15, 9, 24, 38, 2, 0),   -- Axar Patel
+(15, 10, 24, 32, 2, 0),  -- Ravindra Jadeja
+(15, 11, 18, 26, 1, 0);  -- Kuldeep Yadav
+
+
+-- Bowling Scoreboard for South Africa
+INSERT INTO Bowling_Scoreboard (Match_ID, Player_ID, Balls_Bowled, Runs_Conceded, Wickets, Extras)
+VALUES
+(15, 69, 24, 34, 2, 0),   -- Keshav Maharaj
+(15, 70, 24, 30, 1, 0),   -- David Miller
+(15, 71, 18, 28, 1, 0);   -- Anrich Nortje
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (1, 1); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (1, 2);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (1, 5);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (2, 2); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (2, 3);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (2, 6); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (3, 3);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (3, 4);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (3, 5);   
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (4, 4);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (4, 1);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (4, 6);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (5, 1);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (5, 2);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (5, 5);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (6, 2);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (6, 3);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (6, 6);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (7, 3); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (7, 4);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (7, 5);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (8, 4); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (8, 1); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (8, 6); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (9, 1); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (9, 2);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (9, 5);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (10, 2); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (10, 3);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (10, 6); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (11, 3); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (11, 4); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (11, 5);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (12, 4);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (12, 1);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (12, 6);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (13, 1);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (13, 2);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (13, 5);  
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (14, 2);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (14, 3); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (14, 6);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (15, 3);
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (15, 4); 
+INSERT INTO Umpired_By (Match_ID, Umpire_ID) VALUES (15, 5);
