@@ -1,0 +1,172 @@
+﻿DDL  script new
+
+
+
+
+CREATE TABLE Coach (
+    Coach_ID INT PRIMARY KEY,
+    Coach_Name VARCHAR(50),
+    Coach_Type VARCHAR(20),
+    Experience INT
+);
+
+
+
+
+CREATE TABLE Organizer (
+    Organizer_ID INT PRIMARY KEY,
+    Organizer_Name VARCHAR(50)
+);
+
+
+
+
+CREATE TABLE Governing_Body (
+    GoverningBody_ID INT PRIMARY KEY,
+    GoverningBody_Name VARCHAR(50)
+);
+
+
+
+
+CREATE TABLE Tournament (
+    Tournament_ID INT PRIMARY KEY,
+    Tournament_Name VARCHAR(50),
+    Format VARCHAR(30),
+    Prize_Money INT,
+    Winner VARCHAR(40),
+    Runner_Up VARCHAR(40),
+    Host VARCHAR(40),
+    Best_Batsman VARCHAR(40),
+    Best_Bowler VARCHAR(40),
+    Player_of_the_Tournament VARCHAR(40),
+    GoverningBody_ID INT,
+    Organizer_ID INT,
+    FOREIGN KEY (GoverningBody_ID) REFERENCES Governing_Body(GoverningBody_ID),
+    FOREIGN KEY (Organizer_ID) REFERENCES Organizer(Organizer_ID)
+);
+
+
+
+
+CREATE TABLE Team (
+    Team_ID INT PRIMARY KEY,
+    Team_Name VARCHAR(30),
+    Homeground VARCHAR(20),
+    Captain_ID INT,
+    Tournament_ID INT,
+    Coach_ID INT,
+    FOREIGN KEY (Coach_ID) REFERENCES Coach(Coach_ID)
+);
+
+
+
+
+CREATE TABLE Players (
+    Player_ID INT PRIMARY KEY,
+    Player_Name VARCHAR(30),
+    Batting_Style VARCHAR(30),
+    Bowling_Style VARCHAR(30),
+    Date_of_Birth DATE,
+    Team_ID INT,
+    Playing_Role VARCHAR(20),
+    FOREIGN KEY (Team_ID) REFERENCES Team(Team_ID)
+);
+
+
+CREATE TABLE Match (
+    Match_ID INT PRIMARY KEY,
+    Team1_ID INT,
+    Team2_ID INT,
+    Result VARCHAR(50),
+    Date DATE,
+    Man_of_the_Match VARCHAR(50),
+    Venue VARCHAR(50),
+    City VARCHAR(20),
+    Stadium VARCHAR(30),
+    Tournament_ID INT,
+    FOREIGN KEY (Tournament_ID) REFERENCES Tournament(Tournament_ID),
+    FOREIGN KEY (Team1_ID) REFERENCES Team(Team_ID),
+    FOREIGN KEY (Team2_ID) REFERENCES Team(Team_ID)
+);
+
+
+
+
+CREATE TABLE Umpire (
+    Umpire_ID INT PRIMARY KEY,
+    Umpire_Name VARCHAR(30),
+    Experience INT
+);
+
+
+
+
+CREATE TABLE Umpired_By (
+    Umpire_ID INT,
+    Match_ID INT,
+    PRIMARY KEY (Umpire_ID, Match_ID),
+    FOREIGN KEY (Umpire_ID) REFERENCES Umpire(Umpire_ID),
+    FOREIGN KEY (Match_ID) REFERENCES Match(Match_ID)
+);
+CREATE TABLE Bowling_Scoreboard (
+    Match_ID INT,
+    Player_ID INT,
+    Balls_Bowled INT,
+    Runs_Conceded INT,
+    Wickets INT,
+    Extras INT,
+    PRIMARY KEY (Match_ID, Player_ID),
+    FOREIGN KEY (Player_ID) REFERENCES Players(Player_ID),
+    FOREIGN KEY (Match_ID) REFERENCES Match(Match_ID)
+);
+
+
+
+
+CREATE TABLE Batting_Scoreboard (
+    Match_ID INT,
+    Player_ID INT,
+    Runs INT,
+    Balls_Faced INT,
+    Not_Out BOOLEAN,
+    Sixes INT,
+    Fours INT,
+    Wicket_by INT,
+    PRIMARY KEY (Match_ID, Player_ID),
+    FOREIGN KEY (Player_ID) REFERENCES Players(Player_ID),
+    FOREIGN KEY (Match_ID) REFERENCES Match(Match_ID),
+    FOREIGN KEY (Wicket_by) REFERENCES Players(Player_ID)
+);
+
+
+
+
+CREATE TABLE Wicket_by (
+    Player_ID INT PRIMARY KEY,
+    Wicket_type VARCHAR(50),
+    Caught_by INT,
+    FOREIGN KEY (Player_ID) REFERENCES Players(Player_ID)
+);
+
+
+
+
+CREATE TABLE Plays (
+    Team_ID INT,
+    Match_ID INT,
+    PRIMARY KEY (Team_ID, Match_ID),
+    FOREIGN KEY (Team_ID) REFERENCES Team(Team_ID),
+    FOREIGN KEY (Match_ID) REFERENCES Match(Match_ID)
+);
+
+
+
+
+CREATE TABLE Coaches_Teams (
+    Coach_ID INT,
+    Team_ID INT,
+    PRIMARY KEY (Coach_ID, Team_ID),
+    FOREIGN KEY (Coach_ID) REFERENCES Coach(Coach_ID),
+    FOREIGN KEY (Team_ID) REFERENCES Team(Team_ID)
+);
